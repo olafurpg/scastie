@@ -9,7 +9,7 @@ import scala.util.Try
 
 val latest210 = "2.10.6"
 val latest211 = "2.11.11"
-val latest212 = "2.12.3"
+val latest212 = "2.12.2"
 val latest213 = "2.13.0-M1"
 
 val runtimeProjectName = "runtime-scala"
@@ -77,8 +77,9 @@ lazy val scastie = project
 
 lazy val baseSettings = Seq(
   scalaVersion := currentScalaVersion,
-  scalacOptions := Seq(
+  scalacOptions ++= Seq(
     "-deprecation",
+    "-Ywarn-unused-import",
     "-encoding",
     "UTF-8",
     "-feature",
